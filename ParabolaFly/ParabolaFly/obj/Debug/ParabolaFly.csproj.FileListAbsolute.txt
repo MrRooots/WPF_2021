@@ -1,0 +1,14 @@
+C:\Users\MrRooots\Documents\GitHub\WPF2021\ParabolaFly\ParabolaFly\bin\Debug\ParabolaFly.exe.config
+C:\Users\MrRooots\Documents\GitHub\WPF2021\ParabolaFly\ParabolaFly\bin\Debug\ParabolaFly.exe
+C:\Users\MrRooots\Documents\GitHub\WPF2021\ParabolaFly\ParabolaFly\bin\Debug\ParabolaFly.pdb
+C:\Users\MrRooots\Documents\GitHub\WPF2021\ParabolaFly\ParabolaFly\obj\Debug\ParabolaFly.csprojResolveAssemblyReference.cache
+C:\Users\MrRooots\Documents\GitHub\WPF2021\ParabolaFly\ParabolaFly\obj\Debug\MainWindow.g.cs
+C:\Users\MrRooots\Documents\GitHub\WPF2021\ParabolaFly\ParabolaFly\obj\Debug\App.g.cs
+C:\Users\MrRooots\Documents\GitHub\WPF2021\ParabolaFly\ParabolaFly\obj\Debug\ParabolaFly_MarkupCompile.cache
+C:\Users\MrRooots\Documents\GitHub\WPF2021\ParabolaFly\ParabolaFly\obj\Debug\ParabolaFly_MarkupCompile.lref
+C:\Users\MrRooots\Documents\GitHub\WPF2021\ParabolaFly\ParabolaFly\obj\Debug\MainWindow.baml
+C:\Users\MrRooots\Documents\GitHub\WPF2021\ParabolaFly\ParabolaFly\obj\Debug\ParabolaFly.g.resources
+C:\Users\MrRooots\Documents\GitHub\WPF2021\ParabolaFly\ParabolaFly\obj\Debug\ParabolaFly.Properties.Resources.resources
+C:\Users\MrRooots\Documents\GitHub\WPF2021\ParabolaFly\ParabolaFly\obj\Debug\ParabolaFly.csproj.GenerateResource.Cache
+C:\Users\MrRooots\Documents\GitHub\WPF2021\ParabolaFly\ParabolaFly\obj\Debug\ParabolaFly.exe
+C:\Users\MrRooots\Documents\GitHub\WPF2021\ParabolaFly\ParabolaFly\obj\Debug\ParabolaFly.pdb
