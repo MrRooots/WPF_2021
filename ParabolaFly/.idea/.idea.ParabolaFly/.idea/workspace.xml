@@ -25,8 +25,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/ParabolaFly/App.xaml.cs" />
-        <option value="$PROJECT_DIR$/ParabolaFly/MainWindow.xaml" />
         <option value="$PROJECT_DIR$/ParabolaFly/MainWindow.xaml.cs" />
+        <option value="$PROJECT_DIR$/ParabolaFly/MainWindow.xaml" />
       </list>
     </option>
   </component>
@@ -70,7 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1613720128698</updated>
       <workItem from="1613720134635" duration="10654000" />
-      <workItem from="1613899054087" duration="1182000" />
+      <workItem from="1613899054087" duration="1578000" />
     </task>
     <servers />
   </component>

@@ -38,7 +38,6 @@
             </StackPanel>
             <StackPanel Orientation="Vertical">
                 <Button Content="Collect Data" Name="CollectData" />
-                <Button Content="Print Data" Name="PrintData" />
             </StackPanel>
 
             <!-- Canvans Section -->

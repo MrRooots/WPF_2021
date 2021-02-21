@@ -5,15 +5,12 @@ using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace ParabolaFly {
-  /// <summary>
-  /// Interaction logic for MainWindow.xaml
-  /// </summary>
-  
   // Subclass that store data about current state of point in space
   public class Point {
     private double x, y, speed, angle;
 
-    public Point(double x, double y, double speed, double angle) {
+    // Constructor (by default all params 0)
+    public Point(double x = 0, double y = 0, double speed = 0, double angle = 0) {
       this.x = x;
       this.y = y;
       this.speed = speed;
@@ -40,35 +37,30 @@ namespace ParabolaFly {
   public partial class MainWindow {
     private static void StartVisualization(Point myPoint) {
       while (myPoint.get_speed() >= 0) {
-        
+        // Main code part goes here
       }
     }
 
     public MainWindow() {
       InitializeComponent();
       double x = double.NaN, y = double.NaN, speed = double.NaN, angle = double.NaN;
-      
+
       // Collect the input data into subclass Point
       CollectData.Click += (sender, args) => {
         x = Convert.ToDouble(InputXCoord.Text.Replace('.', ','));
         y = Convert.ToDouble(InputYCoord.Text.Replace('.', ','));
         speed = Convert.ToDouble(InputSpeed.Text.Replace('.', ','));
         angle = Convert.ToDouble(InputAngle.Text.Replace('.', ','));
+
         // Check if all fields are filled with data
         if (!double.IsNaN(x) && !double.IsNaN(y) && !double.IsNaN(speed) && !double.IsNaN(angle)) {
-          var myPoint = new Point(
-            x, y, speed, angle
-          );
+          var myPoint = new Point(x, y, speed, angle);  // Create a new Point object
 
-          StartVisualization(myPoint);  // This method will start drawing the myPoint 
+          StartVisualization(myPoint); // This method will start drawing the myPoint fly
         }
-        else {
+        else {  // If one or more fields are empty -> Error message
           MessageBox.Show("Some fields are empty! Please fill them all!");
         }
-
-        // MessageBox.Show(
-        //   myPoint.x.ToString() + ' ' + myPoint.y.ToString() + ' ' + myPoint.speed.ToString() + ' ' + myPoint.angle.ToString()
-        // );
       };
     }
   }
