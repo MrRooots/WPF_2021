@@ -54,11 +54,16 @@ namespace ParabolaFly {
 
         // Check if all fields are filled with data
         if (!double.IsNaN(x) && !double.IsNaN(y) && !double.IsNaN(speed) && !double.IsNaN(angle)) {
-          var myPoint = new Point(x, y, speed, angle);  // Create a new Point object
+          var myPoint = new Point(x, y, speed, angle); // Create a new Point object
 
-          StartVisualization(myPoint); // This method will start drawing the myPoint fly
+          // StartVisualization(myPoint); // This method will start drawing the myPoint fly
+          MessageBox.Show(
+            string.Format("X: {0}, Y: {1}, Speed: {2}, Angle: {3}",
+              myPoint.get_x(), myPoint.get_y(), myPoint.get_speed(), myPoint.get_angle())
+          );
         }
-        else {  // If one or more fields are empty -> Error message
+        else {
+          // If one or more fields are empty -> Error message
           MessageBox.Show("Some fields are empty! Please fill them all!");
         }
       };

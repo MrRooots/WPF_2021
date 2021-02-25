@@ -1,0 +1,5 @@
+C:\Users\MrRooots\Documents\GitHub\WPF2021\SomeCAlgorithms\SomeCAlgorithms\obj\Debug\SomeCAlgorithms.csprojResolveAssemblyReference.cache
+C:\Users\MrRooots\Documents\GitHub\WPF2021\SomeCAlgorithms\SomeCAlgorithms\bin\Debug\SomeCAlgorithms.exe
+C:\Users\MrRooots\Documents\GitHub\WPF2021\SomeCAlgorithms\SomeCAlgorithms\bin\Debug\SomeCAlgorithms.pdb
+C:\Users\MrRooots\Documents\GitHub\WPF2021\SomeCAlgorithms\SomeCAlgorithms\obj\Debug\SomeCAlgorithms.exe
+C:\Users\MrRooots\Documents\GitHub\WPF2021\SomeCAlgorithms\SomeCAlgorithms\obj\Debug\SomeCAlgorithms.pdb
