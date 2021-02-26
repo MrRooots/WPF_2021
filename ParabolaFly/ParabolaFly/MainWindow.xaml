@@ -7,57 +7,79 @@
         mc:Ignorable="d"
         Title="Parabola Fly Visualization" WindowState="Maximized">
     <Grid Name="MainGrid">
-        <!-- Input Section for speed and coordinates -->
-        <StackPanel Orientation="Vertical" Margin="10 0 0 0">
-            <StackPanel Orientation="Horizontal"
-                        VerticalAlignment="Center"
-                        Margin="0 0 0 20">
-                <Label Content="Enter a start point:" Padding="0 10 0 10" Margin="0 0 10 0" />
+        <StackPanel Orientation="Horizontal">
+            <!-- Input Section for speed and coordinates -->
+            <StackPanel Orientation="Vertical" Margin="10 0 0 0">
+                <!-- <StackPanel Orientation="Horizontal" -->
+                <!--             VerticalAlignment="Center" -->
+                <!--             Margin="0 0 0 20"> -->
+                <!--     ~1~ <Label Content="Enter a start point:" Padding="0 10 0 10" Margin="0 0 10 0" /> @1@ -->
+                <!--     ~1~ <StackPanel Orientation="Vertical"> @1@ -->
+                <!--     ~1~     <StackPanel Orientation="Horizontal"> @1@ -->
+                <!--     ~1~         <Label Content="X:" Padding="0 10 0 10" Margin="0 0 5 0" /> @1@ -->
+                <!--     ~1~         <TextBox Width="150" VerticalAlignment="Center" Padding="0 5 0 5" Name="InputXCoord" /> @1@ -->
+                <!--     ~1~     </StackPanel> @1@ -->
+                <!--     ~1~     <StackPanel Orientation="Horizontal"> @1@ -->
+                <!--     ~1~         <Label Content="Y:" Padding="0 10 0 10" Margin="0 0 5 0" /> @1@ -->
+                <!--     ~1~         <TextBox Width="150" VerticalAlignment="Center" Padding="0 5 0 5" Name="InputYCoord" /> @1@ -->
+                <!--     ~1~     </StackPanel> @1@ -->
+                <!--     ~1~ </StackPanel> @1@ -->
+                <!-- </StackPanel> -->
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Center">
+                    <Label Content="Enter a start speed:" Padding="0 10 0 10" Margin="0 0 10 0" />
+                    <TextBox Width="150" VerticalAlignment="Center" Padding="0 5 0 5" Margin="10 0 0 0"
+                             Name="InputSpeed" />
+                    <Label Content="(m/sec)" Padding="0 10 0 10" Margin="5 0 0 0" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Center">
+                    <Label Content="Enter an angle:" Padding="0 10 0 10" Margin="0 0 10 0" />
+                    <TextBox Width="150" VerticalAlignment="Center" Padding="0 5 0 5" Margin="32 0 0 0"
+                             Name="InputAngle" />
+                    <Label Content="(degrees)" Padding="0 10 0 10" Margin="5 0 0 0" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Center">
+                    <Label Content="Enter time step:" Padding="0 10 0 10" Margin="0 0 10 0" />
+                    <TextBox Width="150" VerticalAlignment="Center" Padding="0 5 0 5" Margin="28 0 0 0"
+                             Name="InputTimeStep" />
+                    <Label Content="(sec)" Padding="0 10 0 10" Margin="5 0 0 0" />
+                </StackPanel>
                 <StackPanel Orientation="Vertical">
-                    <StackPanel Orientation="Horizontal">
-                        <Label Content="X:" Padding="0 10 0 10" Margin="0 0 5 0" />
-                        <TextBox Width="150" VerticalAlignment="Center" Padding="0 5 0 5" Name="InputXCoord" />
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Label Content="Y:" Padding="0 10 0 10" Margin="0 0 5 0" />
-                        <TextBox Width="150" VerticalAlignment="Center" Padding="0 5 0 5" Name="InputYCoord" />
-                    </StackPanel>
+                    <Button Content="Calculate" Name="CalculateButton" HorizontalAlignment="Left" Padding="25 10"
+                            Margin="0 15 0 0" />
                 </StackPanel>
             </StackPanel>
-            <StackPanel Orientation="Horizontal"
-                        VerticalAlignment="Center">
-                <Label Content="Enter a start speed:" Padding="0 10 0 10" Margin="0 0 10 0" />
-                <TextBox Width="150" VerticalAlignment="Center" Padding="0 5 0 5" Margin="10 0 0 0" Name="InputSpeed" />
-                <Label Content="(m/sec)" Padding="0 10 0 10" Margin="5 0 0 0" />
+            <Grid Height="500" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+                <ScrollViewer HorizontalScrollBarVisibility="Hidden"
+                              CanContentScroll="True">
+                    <TextBlock Name="Output" Margin="150 0 0 0" LineHeight="1"
+                               HorizontalAlignment="Right" VerticalAlignment="Top" />
+                </ScrollViewer>
+            </Grid>
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Stretch" 
+                        Height="250" Margin="50 0 0 0">
+                <TextBlock Name="ParamsOutput" LineHeight="1" />
             </StackPanel>
-            <StackPanel Orientation="Horizontal"
-                        VerticalAlignment="Center">
-                <Label Content="Enter an angle:" Padding="0 10 0 10" Margin="0 0 10 0" />
-                <TextBox Width="150" VerticalAlignment="Center" Padding="0 5 0 5" Margin="32 0 0 0" Name="InputAngle" />
-                <Label Content="(degrees)" Padding="0 10 0 10" Margin="5 0 0 0" />
-            </StackPanel>
-            <StackPanel Orientation="Vertical">
-                <Button Content="Collect Data" Name="CollectData" />
-            </StackPanel>
-
-            <!-- Canvans Section -->
-            <Canvas>
-                <Canvas.Background>
-                    <DrawingBrush TileMode="Tile" Viewport="-10,-10,40,40"
-                                  ViewportUnits="Absolute">
-                        <DrawingBrush.Drawing>
-                            <GeometryDrawing>
-                                <GeometryDrawing.Geometry>
-                                    <RectangleGeometry Rect="0,0,50,50" />
-                                </GeometryDrawing.Geometry>
-                                <GeometryDrawing.Pen>
-                                    <Pen Brush="Gray" Thickness="1" />
-                                </GeometryDrawing.Pen>
-                            </GeometryDrawing>
-                        </DrawingBrush.Drawing>
-                    </DrawingBrush>
-                </Canvas.Background>
-            </Canvas>
         </StackPanel>
+        <!-- Canvans Section {Graph Drawing} UNDER DEVELOPMENT -->
+        <!-- <Canvas Width="250" Height="250" HorizontalAlignment="Right" VerticalAlignment="Top"> -->
+        <!--     <Canvas.Background> -->
+        <!--         <DrawingBrush TileMode="Tile" Viewport="-10,-10,40,40" -->
+        <!--                       ViewportUnits="Absolute"> -->
+        <!--             <DrawingBrush.Drawing> -->
+        <!--                 <GeometryDrawing> -->
+        <!--                     <GeometryDrawing.Geometry> -->
+        <!--                         <RectangleGeometry Rect="0,0,50,50" /> -->
+        <!--                     </GeometryDrawing.Geometry> -->
+        <!--                     <GeometryDrawing.Pen> -->
+        <!--                         <Pen Brush="Gray" Thickness="1" /> -->
+        <!--                     </GeometryDrawing.Pen> -->
+        <!--                 </GeometryDrawing> -->
+        <!--             </DrawingBrush.Drawing> -->
+        <!--         </DrawingBrush> -->
+        <!--     </Canvas.Background> -->
+        <!-- </Canvas> -->
     </Grid>
 </Window>
