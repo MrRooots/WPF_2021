@@ -52,9 +52,7 @@ namespace ParabolaFly {
     
     // Collect all params of the fly into one string
     public string CollectAllParams() {
-      return string.Format(
-        "Total fly time: {1}{0}Fly total length: {2}{0}Fly maximum height: {3}", 
-        Environment.NewLine, GetFlyTime(), GetFlyLength(), GetMaxFlyHeight());
+      return $"Total fly time: {GetFlyTime()}{Environment.NewLine}Fly total length: {GetFlyLength()}{Environment.NewLine}Fly maximum height: {GetMaxFlyHeight()}";
     }
     
     // Function to execute all calculation functions
@@ -70,8 +68,7 @@ namespace ParabolaFly {
       // Variables
       const string filename = "output.out"; // Filename
       double currentTime = 0;
-      string line;
-      
+
       // Get the Text Block element and clear it (if exist)
       var output = (TextBlock) mainGrid.FindName("Output");
       if (output != null) output.Text = "";
@@ -83,15 +80,14 @@ namespace ParabolaFly {
 
       // Calculating position until the point reaches the ground (x, 0)
       using (var fileStream = new StreamWriter(path)) {
+        string line;
         if (output != null) {
           while (currentTime < myPoint.GetFlyTime()) {
             currentTime += myPoint.TimeStep;
             
             myPoint.CalculateCoords(Math.Round(currentTime, 4));
             
-            line = string.Format("Time (t): {0}\tX coord: {1}\tY coord: {2}\tSpeed at moment t: {3}",
-              Math.Round(currentTime, 3),
-              myPoint.X, myPoint.Y, myPoint.MomentSpeed);
+            line = $"Time (t): {Math.Round(currentTime, 3)}\tX coord: {myPoint.X}\tY coord: {myPoint.Y}\tSpeed at moment t: {myPoint.MomentSpeed}";
 
             if (!(myPoint.Y >= 0)) continue;
             fileStream.WriteLine(line);
@@ -99,7 +95,7 @@ namespace ParabolaFly {
           }
         }
 
-        line = string.Format("Touch Down! (At {0} seconds)", myPoint.GetFlyTime());
+        line = $"Touch Down! (At {myPoint.GetFlyTime()} seconds)";
         fileStream.Write(line);
         if (output != null) output.Text += line;
       }
